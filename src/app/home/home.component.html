@@ -1,0 +1,97 @@
+<div class="container">
+    <a class="navbar-brand" href="#">
+
+    </a>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#" style="color:red"> <img src="/assets/images.png" alt="" width="100"
+                        height="60"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item active">
+                            <a class="nav-link" style="color:red" (click)="topNewsHere()">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color:red" (click)="commonData('Tech')">Tech</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" style="color:red" (click)="commonData('Business')">Business</a>
+                        </li>
+                        <li class="nav-item active">
+                            <!-- <a class="nav-link" >sports</a> -->
+
+                            <a class="nav-link" style="color:red" (click)="commonData('Sports')">Sports</a>
+                            <!-- <button (click) = "sportData()"></button> -->
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" style="color:red"
+                                (click)="commonData('Entertainment')">Entertainment</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" style="color:red" (click)="commonData('Health')">Health</a>
+                        </li>
+<!--                         
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                          </form> -->
+                    </ul>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<!-- this.topNewsFlag = false; -->
+<div class="container fluid mt-3" *ngIf="topNewsFlag == false">
+
+    <h4>
+        <marquee> {{sportsData}} Breaking News is Here</marquee>
+    </h4>
+
+    <div class="row mt-4">
+        <div *ngFor="let data of commonArray" class="col-lg-3 mt-3 mb-3">
+            <div class="box">
+
+                <img src="{{data.urlToImage}}" alt="image" />
+                <div class="h5 mt-3mb-3">{{data.title}}</div>
+                <a href="{{data.url}}" class="btn btn-dark btn-sm" target="_blank">Read More</a>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container fluid mt-3" *ngIf="topNewsFlag == true">
+
+    <h4>
+        <marquee> All Breaking News are here </marquee>
+    </h4>
+
+    <div class="row mt-4">
+        <div *ngFor="let data of combined" class="col-lg-3 mt-3 mb-3">
+            <div class="box">
+
+                <img src="{{data.urlToImage}}" alt="image" />
+                <div class="h5 mt-3mb-3">{{data.title}}</div>
+                <a href="{{data.url}}" class="btn btn-dark btn-sm" target="_blank">Read More</a>
+
+            </div>
+        </div>
+    </div>
+
+</div>

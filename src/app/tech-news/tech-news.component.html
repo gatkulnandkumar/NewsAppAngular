@@ -1,0 +1,17 @@
+<div class="container fluid mt-3">
+    <!-- <h5>Tech News here</h5> -->
+      <h4><marquee> Technology Breaking News  </marquee></h4>
+  
+      <div class="row mt-4">
+        <div *ngFor="let data of techLinesData" class="col-lg-3 mt-3 mb-3">
+          <div class="box">
+            <!-- <div class="h5 mt-3mb-3">{{data.name}}</div> -->
+          <img src="{{data.urlToImage}}" alt = "image"/>
+            <div class="h5 mt-3mb-3">{{data.title}}</div>
+            <a href="{{data.url}}" class="btn btn-dark btn-sm" target="_blank">Read More</a>
+  
+          </div>
+        </div>
+      </div>
+      
+  </div>
